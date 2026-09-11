@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Data">
+      <UniqueIdentifier>{83518a31-2518-496d-81fe-5a68a5383b83}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\json_elements.h" />
+    <ClInclude Include="include\json.h" />
+    <ClInclude Include="include\span.h" />
+    <ClInclude Include="include\json_serialization.h" />
+    <ClInclude Include="include\json_any_serialization.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\json_elements.cpp" />
+    <ClCompile Include="src\json.cpp" />
+  </ItemGroup>
+</Project>
