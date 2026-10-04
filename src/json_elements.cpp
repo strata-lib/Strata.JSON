@@ -915,6 +915,11 @@ value::operator number() const
 	return as_number();
 }
 
+value::operator short() const
+{
+	return (short)as_number();
+}
+
 value::operator int() const
 {
 	return (int)as_number();

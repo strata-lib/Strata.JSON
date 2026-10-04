@@ -308,6 +308,7 @@ namespace strata
 
 			operator boolean() const;
 			operator number() const;
+			operator short() const;
 			operator int() const;
 			operator size_t() const;
 			operator int64_t() const;

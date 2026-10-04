@@ -16,14 +16,9 @@
 
 namespace strata::json::serialization
 {
-	// ------------------------------------------------------------------
 	// JSerializer<T> is the customization point for the whole system.
-	//
-	// A specialization must provide:
-	//   static json::value Serialize(const T& value);
-	//   static T Deserialize(const json::json_proxy& element);
-	//
-	template <typename T> struct JSerializer; // deliberately undefined: using an unspecialized T for a clear compile error
+	// deliberately undefined: using an unspecialized T for a clear compile error
+	template <typename T> struct JSerializer; 
 
 	template <typename T> inline value Serialize(const T& value)
 	{
@@ -57,6 +52,19 @@ namespace strata::json::serialization
 		static int64_t Deserialize(const value& element)
 		{
 			return (int64_t)element.as_integer();
+		}
+	};
+
+	template <> struct JSerializer<size_t>
+	{
+		static value Serialize(size_t source)
+		{
+			return source;
+		}
+
+		static size_t Deserialize(const value& element)
+		{
+			return (size_t)element.as_integer();
 		}
 	};
 
@@ -232,6 +240,7 @@ namespace strata::json::serialization
 			return result;
 		}
 	};
+
 } // namespace strata::json::serialization
 
 #endif // !_H_JSERIALIZER_
